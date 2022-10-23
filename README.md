@@ -8,7 +8,9 @@ Code for paper titled "Automated segmentation of the human supraclavicular fat d
 An overview of the whole network. It consists of three combining 2D U-Net-like networks and a 3D fusion network to mimic the manual workflow of characterizing BAT regions and to efficiently encode the multi-modal information and extract the 3D context information from multi-modal MRI scans for the segmentation of the BAT. The three combining 2D networks leverage multi-modal information and comprehensive 2D context information in axial, coronal, and sagittal planes to conduct the preliminary segmentation and the 3D fusion network combines multi-modal information, 3D context information and preliminary segmentation results for obtaining a fine-tuned segmentation.
 
 An example with MR images of all modalities and manual annotation is given in example/.
+
 Pre-trained model checkpoints are stored at our [Google Drive Folder](https://drive.google.com/drive/folders/1-myy3VFzUGUEjBje50m_Pu2beqZlhM8g?usp=sharing).
+
 ## Requirement:
   > Python 2.7.3  
   > tensorflow 1.9.0  
