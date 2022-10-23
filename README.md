@@ -1,13 +1,15 @@
 # BAT-Net
 Code for paper titled "Automated segmentation of the human supraclavicular fat depot via deep neural network in water-fat separated magnetic resonance images" 
 
-# A sketch of the developed deep learning methods:
+## A sketch of the developed deep learning methods:
 
 ![Figure 1](./figures/Figrue_1_WholePipeline.jpg)
 
 An overview of the whole network. It consists of three combining 2D U-Net-like networks and a 3D fusion network to mimic the manual workflow of characterizing BAT regions and to efficiently encode the multi-modal information and extract the 3D context information from multi-modal MRI scans for the segmentation of the BAT. The three combining 2D networks leverage multi-modal information and comprehensive 2D context information in axial, coronal, and sagittal planes to conduct the preliminary segmentation and the 3D fusion network combines multi-modal information, 3D context information and preliminary segmentation results for obtaining a fine-tuned segmentation.
 
-# Requirement:
+An example with MR images of all modalities and manual annotation is given in example/.
+Pre-trained model checkpoints are stored at our [Google Drive Folder](https://drive.google.com/drive/folders/1-myy3VFzUGUEjBje50m_Pu2beqZlhM8g?usp=sharing).
+## Requirement:
   > Python 2.7.3  
   > tensorflow 1.9.0  
   > Keras 2.2.2  
@@ -18,9 +20,9 @@ An overview of the whole network. It consists of three combining 2D U-Net-like n
   > SimpleITK 1.1.0  
 
 
-# Guideline for utilizing:
+## Guideline for utilizing:
 
-# Image and Label pre-processing:
+### Image and Label pre-processing:
 
 (1) Data should be organized as:
     
@@ -37,7 +39,7 @@ An overview of the whole network. It consists of three combining 2D U-Net-like n
     
        
         
-# Three-combining 2D segmentation network component:
+### Three-combining 2D segmentation network component:
 
 
 (1) Editor /Three_combining_2D_segmentation_network/config.py file:
@@ -89,7 +91,7 @@ An overview of the whole network. It consists of three combining 2D U-Net-like n
     --reference-image-path your/reference/image   # An image used for setting the origin, spacing and direction of output images.
 
 
-# 3D fusion network component:
+### 3D fusion network component:
 
 (1) Editor /ThreeD_fusion_net/config.py file:
 
